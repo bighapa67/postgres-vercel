@@ -1,6 +1,6 @@
 //'use client';
 
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { Pool } from 'pg';
 
 // Create a connection pool
@@ -12,7 +12,7 @@ const pool = new Pool({
   port: 5432,
 });
 
-export async function GET(req: NextRequest) {
+export async function GET() {
   try {
     console.log('Fetching users...');
     const result = await pool.query('SELECT * FROM employees');

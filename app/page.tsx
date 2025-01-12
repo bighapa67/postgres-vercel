@@ -21,7 +21,7 @@ export default function Home() {
         setEmployees(data);
         setLoading(false);
       })
-      .catch((err) => {
+      .catch(() => {
         setError('Failed to fetch employees');
         setLoading(false);
       });
